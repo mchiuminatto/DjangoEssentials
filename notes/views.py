@@ -4,10 +4,15 @@ from django.http import Http404
 from .models import Notes
 
 # import to support class-based views (list views)
-from django.views.generic import DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView
 
 
 # Create your views here.
+
+class NotesCreateView(CreateView):
+    model = Notes
+    fields = ("text", "title")
+    success_url = "/smart/notes"
 
 class NotesListView(ListView):
     model = Notes
