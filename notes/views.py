@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 
+from .forms import NotesForm
 from .models import Notes
 
 # import to support class-based views (list views)
@@ -11,8 +12,8 @@ from django.views.generic import CreateView, DetailView, ListView
 
 class NotesCreateView(CreateView):
     model = Notes
-    fields = ("text", "title")
     success_url = "/smart/notes"
+    form_class = NotesForm
 
 class NotesListView(ListView):
     model = Notes
