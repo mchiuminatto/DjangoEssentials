@@ -10,7 +10,9 @@ from django.views.generic import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+
 # Create your views here.
+
 
 class NotesDeleteView(DeleteView):
     model = Notes
